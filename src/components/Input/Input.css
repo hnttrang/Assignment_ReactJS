@@ -1,0 +1,78 @@
+.input {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.input .input-bar {
+  background-color: #f4fafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.input .input-bar__invalid {
+  border: 2px solid red;
+}
+
+.input .input-bar input {
+  border: none;
+  outline: none;
+  text-align: right;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: #00494d;
+  background-color: #f4fafa;
+}
+
+.input .input-bar img {
+  height: 20%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 1rem;
+}
+
+.input .tip-pad__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input .tip-pad__row .percent-button {
+  font-weight: 700;
+  background-color: #00494d;
+  margin: 0.5rem;
+  padding: .5rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  width: 5rem;
+  text-align: center;
+}
+
+.input .tip-pad__row .percent-button__target {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.input .tip-pad__row .percent-button:focus {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.input .tip-pad__row input {
+  color: white;
+  font-family: 'Space Mono', monospace;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=Input.css.map */

@@ -1,0 +1,47 @@
+@import "../../styles/scss/variables";
+@import "../../styles/scss/global";
+.right-side{
+    background-color: $VeryDarkCyan;
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 1.5rem;
+    flex-grow: 1;
+
+    .container{
+        text-align: center;
+
+        button{
+            color: white;
+            cursor: pointer;
+            align-self: center;
+            background-color: $strongCyan;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            border-radius: 5px;
+            color: $VeryDarkCyan;
+
+            &:disabled{
+                pointer-events: none;
+                opacity: .4;
+            }
+        }
+    }
+}
+
+.display{
+    display: flex;
+    justify-content: space-between;
+    color: $strongCyan;
+    border-radius: 10px;
+
+    p{
+        padding: 0;
+        margin: .2rem;
+        color: $LightGrayishCyan;
+        font-size: 10px;
+    }
+
+    img{
+        color: $strongCyan;
+    }
+}
