@@ -1,6 +1,12 @@
-@import "../../styles/scss/variables";
-@import "../../styles/scss/global";
+//@import "../../styles/scss/variables";
+@import "../../styles/scss/style";
 .right-side{
+    font-family: 'Space Mono', monospace;
+    font-weight: 500;
+    font-size: $FontSize;
+    margin: 1rem;
+    padding: 1rem;
+
     background-color: $VeryDarkCyan;
     border-radius: 10px;
     margin: 2rem;
@@ -13,10 +19,12 @@
         button{
             color: white;
             cursor: pointer;
+            font-family: 'Space Mono', monospace;
+            font-weight: 500;
             align-self: center;
             background-color: $strongCyan;
-            margin: 0.5rem;
-            padding: 0.5rem 1rem 0.5rem 1rem;
+            margin: .5rem;
+            padding: .5rem 1rem .5rem 1rem;
             border-radius: 5px;
             color: $VeryDarkCyan;
 

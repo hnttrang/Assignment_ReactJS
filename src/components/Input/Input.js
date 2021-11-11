@@ -16,7 +16,12 @@ function input({children}){
                         //validateInput(e);
                     }}/>
                 </div>
-                {children}
+                <p>Select tip %</p>
+                <div className="tip-pad">
+                    {children}
+                    <input className='percent-button' placeholder='CUSTOM' type='number'/>
+                </div>
+
                 <p>Number of People</p>
                 <div className="input-bar">
                     <img src={person} alt="icon-person"/>

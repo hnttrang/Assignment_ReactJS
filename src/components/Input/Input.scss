@@ -1,6 +1,9 @@
 @import "../../styles/scss/variables";
-@import "../../styles/scss/global";
+@import "../../styles/scss/style";
 .input{
+    font-family: 'Space Mono', monospace;
+    font-weight: 500;
+    font-size: $FontSize;
     margin: 1rem;
     padding: 1rem;
     .input-bar{
@@ -31,38 +34,39 @@
     }
 
     .tip-pad{
-        &__row{
-            display: flex;
-            justify-content: space-between;
-            .percent-button{
-                font-weight: 700;
-                background-color: $VeryDarkCyan;
-                margin: 0.5rem;
-                padding: .5rem;
-                border-radius: 5px;
-                color: white;
-                cursor: pointer;
-                width: 5rem;
-                text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, 1fr);
+        //grid-gap: 5px;
+            // .percent-button{
+            //     font-weight: 700;
+            //     background-color: $VeryDarkCyan;
+            //     margin: .5rem;
+            //     padding: .5rem;
+            //     border-radius: 5px;
+            //     color: white;
+            //     cursor: pointer;
+            //     width: 5rem;
+            //     text-align: center;
     
-                &__target{
-                    background-color: $strongCyan;
-                    color: $VeryDarkCyan;
-                }
+            //     &__target{
+            //         background-color: $strongCyan;
+            //         color: $VeryDarkCyan;
+            //     }
     
-                &:focus{
-                    background-color: $strongCyan;
-                    color: $VeryDarkCyan;
-                  }
+            //     &:focus{
+            //         background-color: $strongCyan;
+            //         color: $VeryDarkCyan;
+            //       }
     
-            }
+            // }
             input{
                 color: white;
                 font-family: 'Space Mono', monospace;
                 outline: none;
                 border: none;
+                padding: 0;
             }
             
         }
-    }
 }

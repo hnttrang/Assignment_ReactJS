@@ -1,4 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+body {
+  max-width: 1024px;
+  min-width: 375px;
+  margin: auto;
+}
+
+text {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #00494d;
+  margin: auto;
+  background-color: #c5e4e7;
+}
+
 .input {
+  font-family: 'Space Mono', monospace;
+  font-weight: 500;
+  font-size: 24px;
   margin: 1rem;
   padding: 1rem;
 }
@@ -38,41 +56,20 @@
   padding-left: 1rem;
 }
 
-.input .tip-pad__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.input .tip-pad {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
 }
 
-.input .tip-pad__row .percent-button {
-  font-weight: 700;
-  background-color: #00494d;
-  margin: 0.5rem;
-  padding: .5rem;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  width: 5rem;
-  text-align: center;
-}
-
-.input .tip-pad__row .percent-button__target {
-  background-color: #26c0ab;
-  color: #00494d;
-}
-
-.input .tip-pad__row .percent-button:focus {
-  background-color: #26c0ab;
-  color: #00494d;
-}
-
-.input .tip-pad__row input {
+.input .tip-pad input {
   color: white;
   font-family: 'Space Mono', monospace;
   outline: none;
   border: none;
+  padding: 0;
 }
-/*# sourceMappingURL=Input.css.map */
+/*# sourceMappingURL=input.css.map */
