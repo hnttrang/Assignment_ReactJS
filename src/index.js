@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SubmitProvider from "./components/context/SubmitContext"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SubmitProvider>
+      <App />
+    </SubmitProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -54,4 +54,18 @@ body input[type=number]::-webkit-outer-spin-button {
     margin: 0;
   }
 }
+
+body {
+  max-width: 1024px;
+  min-width: 375px;
+  margin: auto;
+}
+
+text {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #00494d;
+  margin: auto;
+  background-color: #c5e4e7;
+}
 /*# sourceMappingURL=style.css.map */
