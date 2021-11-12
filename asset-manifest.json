@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Assignment_ReactJS/static/css/main.1893ec84.chunk.css",
+    "main.js": "/Assignment_ReactJS/static/js/main.e006aaab.chunk.js",
+    "main.js.map": "/Assignment_ReactJS/static/js/main.e006aaab.chunk.js.map",
+    "runtime-main.js": "/Assignment_ReactJS/static/js/runtime-main.02c39d7d.js",
+    "runtime-main.js.map": "/Assignment_ReactJS/static/js/runtime-main.02c39d7d.js.map",
+    "static/js/2.6837984e.chunk.js": "/Assignment_ReactJS/static/js/2.6837984e.chunk.js",
+    "static/js/2.6837984e.chunk.js.map": "/Assignment_ReactJS/static/js/2.6837984e.chunk.js.map",
+    "static/js/3.9b723ed2.chunk.js": "/Assignment_ReactJS/static/js/3.9b723ed2.chunk.js",
+    "static/js/3.9b723ed2.chunk.js.map": "/Assignment_ReactJS/static/js/3.9b723ed2.chunk.js.map",
+    "index.html": "/Assignment_ReactJS/index.html",
+    "static/css/main.1893ec84.chunk.css.map": "/Assignment_ReactJS/static/css/main.1893ec84.chunk.css.map",
+    "static/js/2.6837984e.chunk.js.LICENSE.txt": "/Assignment_ReactJS/static/js/2.6837984e.chunk.js.LICENSE.txt",
+    "static/media/icon-dollar.9f9be353.svg": "/Assignment_ReactJS/static/media/icon-dollar.9f9be353.svg",
+    "static/media/icon-person.65bfd204.svg": "/Assignment_ReactJS/static/media/icon-person.65bfd204.svg",
+    "static/media/logo.3cc0528b.svg": "/Assignment_ReactJS/static/media/logo.3cc0528b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02c39d7d.js",
+    "static/js/2.6837984e.chunk.js",
+    "static/css/main.1893ec84.chunk.css",
+    "static/js/main.e006aaab.chunk.js"
+  ]
+}
