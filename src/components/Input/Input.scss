@@ -10,6 +10,7 @@
     .input-bar{
         span{
             display: none;
+            color: red;
         }
         &__invalid{
             border: 2px solid red;

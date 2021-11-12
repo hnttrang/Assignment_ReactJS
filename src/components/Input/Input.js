@@ -1,7 +1,7 @@
 import dollar from "../../assets/icon-dollar.svg";
 import person from "../../assets/icon-person.svg";
 import React from "react";
-import { useState, useContext, useEffect } from "react";
+import { useRef, useContext, useEffect } from "react";
 import Button from "../Button/Button";
 import { SubmitContext } from "../context/SubmitContext";
 import  "./Input.css"
@@ -9,7 +9,7 @@ import  "./Input.css"
 
 function Input(){
     const {data, setData, isValid} = useContext(SubmitContext);
-    //console.log(data);
+    //////console.log(data);
     const tippad = [
         [5, 10, 15],
         [20, 25]];
@@ -26,6 +26,16 @@ function Input(){
         }
     };
 
+    const firstLoad = useRef(true);
+    // useEffect(() => {
+    //   if (firstLoad.current) {
+    //     firstLoad.current = false;
+    //     return;
+    //   }
+    // },[]);
+
+    ////console.log(firstLoad);
+
     return (
         <div className="input">
             <form id="input-form" 
@@ -34,7 +44,8 @@ function Input(){
                 }}>
                 <p>Bill</p>
                 
-                <div className={isValid.bill ? "input-bar" : "input-bar input-bar__invalid"}>
+                <div className={isValid.bill ? "input-bar" : "input-bar input-bar__invalid"}
+                    ref={firstLoad}>
                     <img src={dollar} alt="icon-dollar"/>
                     <input type="number" 
                     placeholder="0"

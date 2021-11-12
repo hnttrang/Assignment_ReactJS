@@ -36,7 +36,7 @@ function SubmitProvider({ children }) {
 
 
     useEffect(() =>{
-		console.log(data);
+		// //console.log(data);
 		setIsValid(validateInput());
 		setIsReset(
 			!(data.tip == null && data.bill == null && data.people == null)
@@ -45,23 +45,23 @@ function SubmitProvider({ children }) {
     }, [data, isReset])
 
 	useEffect(() => {
-		console.log(isValid);
+		//console.log(isValid);
 		setIsCalc(isValid.tip && isValid.people && isValid.bill);
 	},[isValid])
 
 	const calculate = async (e) => {
-		console.log("click");
+		//console.log("click");
 		
 		try {
 			axios.get(`${API}?bill=${data.bill}&people=${data.people}&tipPercent=${data.tip}`).then((response) => {
-				console.log(response);
+				//console.log(response);
 				setResult({
 					total: response.data.amount.toFixed(2),
 					amount: response.data.amount.toFixed(2)})
 					
 			  });
 
-			//console.log(result);
+			////console.log(result);
 		} catch (error) {
 			alert("Something has problems")
 		}
