@@ -6,7 +6,11 @@
     font-size: $FontSize;
     margin: 1rem;
     padding: 1rem;
+
     .input-bar{
+        span{
+            display: none;
+        }
         &__invalid{
             border: 2px solid red;
         }

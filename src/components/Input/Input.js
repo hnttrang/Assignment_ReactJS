@@ -8,15 +8,23 @@ import  "./Input.css"
 
 
 function Input(){
-    // const [value, setValue] = useState(
-    //     {tip : null,
-    //     bill : null,
-    //     people : null}
-    // );
-    const {data, setData} = useContext(SubmitContext);
+    const {data, setData, isValid} = useContext(SubmitContext);
+    //console.log(data);
     const tippad = [
         [5, 10, 15],
         [20, 25]];
+
+    const preventOperator = e =>{
+            if (e.key == '-' || e.key == '+'){
+                e.preventDefault();
+            }
+        };
+        //Int value
+    const preventFloat = e =>{
+        if (e.key == '.'){
+            e.preventDefault();
+        }
+    };
 
     return (
         <div className="input">
@@ -25,12 +33,16 @@ function Input(){
                     //submitForm();
                 }}>
                 <p>Bill</p>
-                <div className="input-bar">
+                
+                <div className={isValid.bill ? "input-bar" : "input-bar input-bar__invalid"}>
                     <img src={dollar} alt="icon-dollar"/>
-                    <input type="number" name="bill" id="bill" placeholder="0"
+                    <input type="number" 
+                    placeholder="0"
+                    onKeyPress = {e =>{
+                        preventOperator(e);
+                    }}
                     onChange = {e => {
                         setData({...data, bill: parseFloat(e.target.value)});
-                        //validateInput(e);
                     }}/>
                 </div>
                 <p>Select tip %</p>
@@ -52,6 +64,9 @@ function Input(){
                     <input id='cus-tip' 
                     className={tippad.flat().includes(data.tip) ? "percent-button" : "percent-button percent-button__target"} 
                     placeholder='CUSTOM' type='number'
+                    onKeyPress = {e => {
+                        preventOperator(e);
+                    }}
                     onClick = { (e) => {
                         setData({...data, tip: parseFloat(e.target.value)});
                     }}
@@ -61,10 +76,14 @@ function Input(){
                 </div>
 
                 <p>Number of People</p>
-                <div className="input-bar">
+                <div className={isValid.people ? "input-bar" : "input-bar input-bar__invalid"}>
                     <img src={person} alt="icon-person"/>
                     <input 
-                    type="number" id="people" placeholder="0"
+                    type="number" placeholder="0"
+                    onKeyPress = {e => {
+                        preventOperator(e);
+                        preventFloat(e);
+                    }}
                     onChange = {e => {
                         setData({...data, people: parseFloat(e.target.value)});
                     }} />

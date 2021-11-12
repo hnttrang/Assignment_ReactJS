@@ -6,7 +6,11 @@ import { API } from "../../APIs";
 export const SubmitContext = createContext();
 
 function SubmitProvider({ children }) {
-	const [valueValid, setValueValid] = useState(false);
+	const [isValid, setIsValid] = useState(
+		{tip : false,
+		bill : false,
+		people : false}
+	);
     const [isCalc, setIsCalc] = useState(false);
 	const [isReset, setIsReset] = useState(false);
 	const [result, setResult] = useState(
@@ -19,15 +23,31 @@ function SubmitProvider({ children }) {
         people : null}
     );
 
-	
+	const validateInput = () => {
+
+		if (data.tip == null && data.bill == null && data.people == null){
+			return {...isValid, tip : false, bill : false, people : false};
+		}
+		const floatReg = /^[0-9]*\.?[0-9]*$/;
+		const positiveIntReg = /^[1-9]*$/;
+
+		return  {...isValid, tip : floatReg.test(data.tip), bill : floatReg.test(data.bill), people : positiveIntReg.test(data.people)};;
+	}
+
+
     useEffect(() =>{
-		setValueValid(
-            !(data.tip == null || data.bill == null || data.people == null)
-        );
-        setIsCalc(valueValid);
-		//console.log(data);
-		
-    }, [valueValid, data])
+		console.log(data);
+		setIsValid(validateInput());
+		setIsReset(
+			!(data.tip == null && data.bill == null && data.people == null)
+		)
+        
+    }, [data, isReset])
+
+	useEffect(() => {
+		console.log(isValid);
+		setIsCalc(isValid.tip && isValid.people && isValid.bill);
+	},[isValid])
 
 	const calculate = async (e) => {
 		console.log("click");
@@ -48,12 +68,12 @@ function SubmitProvider({ children }) {
 	};
 
 	const value = {
-        setValueValid,
+        setIsValid,
 		setData,
+		isValid,
         isCalc,
 		isReset,
 		setIsCalc,
-		validateInput,
 		result,
 		data,
 		calculate,

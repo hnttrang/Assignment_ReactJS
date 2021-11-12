@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { SubmitContext } from '../context/SubmitContext';
 
 const Display = (props) => {
-  const {isCalc, isReset, result, calculate} = useContext(SubmitContext);
+  const {isCalc, isReset, setData, data, result, calculate} = useContext(SubmitContext);
 
     return (
         <section className="right-side">
@@ -19,6 +19,10 @@ const Display = (props) => {
         <div className="container">
           <button
           disabled={!isReset}
+          onClick = {e =>{
+            e.preventDefault();
+            setData({...data, bill: null, people: null, tip: null})
+          }}
           >RESET</button>
           <button type='button'
           disabled={!isCalc}
