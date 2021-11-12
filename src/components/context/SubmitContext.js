@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
+import axios from "axios";
+import { API } from "../../APIs";
 
 export const SubmitContext = createContext();
 
@@ -19,6 +21,9 @@ function SubmitProvider({ children }) {
 
 	
     useEffect(() =>{
+		setValueValid(
+            !(data.tip == null || data.bill == null || data.people == null)
+        );
         setIsCalc(valueValid);
 		//console.log(data);
 		
@@ -28,41 +33,29 @@ function SubmitProvider({ children }) {
 		console.log("click");
 		
 		try {
-			console.log(data);
-			let callAPI = await fetch(
-				`https://plitter-server.vercel.app/api/calculate?bill=${data.bill}&people=${data.people}&tipPercent=${data.tip}`
-			);
+			axios.get(`${API}?bill=${data.bill}&people=${data.people}&tipPercent=${data.tip}`).then((response) => {
+				console.log(response);
+				setResult({
+					total: response.data.amount.toFixed(2),
+					amount: response.data.amount.toFixed(2)})
+					
+			  });
 
-			let res = await callAPI.json();
-			setResult({
-				amount: res.amount.toFixed(2),
-				total: res.total.toFixed(2),
-			});
-
-			console.log(result);
+			//console.log(result);
 		} catch (error) {
-			console.log('catch error');
+			alert("Something has problems")
 		}
 	};
 
-	const validateInput = (value) => {
-		let valid = (value.tip == null || value.bill == null || value.people == null);
-		// console.log(valid);
-		// console.log(value);
-        setValueValid(
-            !(value.tip == null || value.bill == null || value.people == null)
-        );
-		setData({...data, tip: value.tip, bill : value.bill, people : value.people});
-	}
-
-
 	const value = {
         setValueValid,
+		setData,
         isCalc,
 		isReset,
 		setIsCalc,
 		validateInput,
 		result,
+		data,
 		calculate,
 	};
 

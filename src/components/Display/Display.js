@@ -17,7 +17,9 @@ const Display = (props) => {
           <h1 id="total">{result.total}</h1>
         </div>
         <div className="container">
-          <button>RESET</button>
+          <button
+          disabled={!isReset}
+          >RESET</button>
           <button type='button'
           disabled={!isCalc}
           onClick = {e => {

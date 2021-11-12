@@ -8,20 +8,15 @@ import  "./Input.css"
 
 
 function Input(){
-    const [value, setValue] = useState(
-        {tip : null,
-        bill : null,
-        people : null}
-    );
-    const {validateInput} = useContext(SubmitContext);
+    // const [value, setValue] = useState(
+    //     {tip : null,
+    //     bill : null,
+    //     people : null}
+    // );
+    const {data, setData} = useContext(SubmitContext);
     const tippad = [
         [5, 10, 15],
         [20, 25]];
-
-    useEffect(() => {
-        validateInput(value);
-        
-    },[setValue, value]) 
 
     return (
         <div className="input">
@@ -34,7 +29,7 @@ function Input(){
                     <img src={dollar} alt="icon-dollar"/>
                     <input type="number" name="bill" id="bill" placeholder="0"
                     onChange = {e => {
-                        setValue({...value, bill: parseFloat(e.target.value)})
+                        setData({...data, bill: parseFloat(e.target.value)});
                         //validateInput(e);
                     }}/>
                 </div>
@@ -45,23 +40,23 @@ function Input(){
                     return (
                         <Button
                         key = {idx}
-                        className = {btn == value.tip ? "percent-button percent-button__target" : "percent-button"}
+                        className = {btn == data.tip ? "percent-button percent-button__target" : "percent-button"}
                         value = {btn}
                         onClick = {(e) => {
                         e.preventDefault();
-                        setValue({...value, tip : parseFloat(btn)});
+                        setData({...data, tip: parseFloat(btn)});
                         }}>
                         </Button>
                     ) 
                     })}
                     <input id='cus-tip' 
-                    className={tippad.flat().includes(value.tip) ? "percent-button" : "percent-button percent-button__target"} 
+                    className={tippad.flat().includes(data.tip) ? "percent-button" : "percent-button percent-button__target"} 
                     placeholder='CUSTOM' type='number'
                     onClick = { (e) => {
-                        setValue({...value, tip : parseFloat(e.target.value)});
+                        setData({...data, tip: parseFloat(e.target.value)});
                     }}
                     onChange = {e =>{
-                        setValue({...value, tip : parseFloat(e.target.value)});
+                        setData({...data, tip: parseFloat(e.target.value)});
                     }}/>
                 </div>
 
@@ -71,7 +66,7 @@ function Input(){
                     <input 
                     type="number" id="people" placeholder="0"
                     onChange = {e => {
-                        setValue({...value, people: parseInt(e.target.value)})
+                        setData({...data, people: parseFloat(e.target.value)});
                     }} />
                 </div>
             </form>
